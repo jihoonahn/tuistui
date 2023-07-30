@@ -5,19 +5,14 @@ let package = Package(
     name: "TuistUI",
     platforms: [.macOS(.v11)],
     products: [
-        .library(
-            name: "TuistUI",
+        .executable(
+            name: "tuist-ui",
             targets: ["TuistUI"]),
     ],
-    dependencies: [
-        .package(url: "https://github.com/tuist/ProjectAutomation", .upToNextMajor(from: "3.21.1"))
-    ],
+    dependencies: [],
     targets: [
-        .target(
-            name: "TuistUI",
-            dependencies: [
-                .product(name: "ProjectAutomation", package: "ProjectAutomation")
-            ]
+        .executableTarget(
+            name: "TuistUI"
         ),
         .testTarget(
             name: "TuistUITests",
