@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "projectdescription",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tuist/projectdescription",
+      "state" : {
+        "revision" : "1d1e72f2cd90c841d10ee761ec6fd521651d56ba",
+        "version" : "3.28.0"
+      }
+    }
+  ],
+  "version" : 2
+}
