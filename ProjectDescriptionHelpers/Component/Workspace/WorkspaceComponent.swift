@@ -19,14 +19,22 @@ public extension Workspace {
         workspaceModifier.schemes = scheme()
         return self
     }
+    /// fileHeaderTemplate Set up
     @inlinable
-    func fileHeaderTemplate(_ fileHeader: ProjectDescription.FileHeaderTemplate) -> Self {
+    func fileHeaderTemplate(_ fileHeader: FileHeaderTemplate) -> Self {
         workspaceModifier.fileHeaderTemplate = fileHeader
         return self
     }
+    /// additionalFiles Set up
     @inlinable
-    func additionalFile() -> Self {
-        
+    func additionalFile(@FileElementBuilder additionalFile: () -> [FileElement]) -> Self {
+        workspaceModifier.additionalFiles = additionalFile()
+        return self
+    }
+    /// generationOption Set up
+    @inlinable
+    func generationOption(_ option: ProjectDescription.Workspace.GenerationOptions) -> Self {
+        workspaceModifier.generationOptions = option
         return self
     }
 }

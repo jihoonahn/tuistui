@@ -1,8 +1,11 @@
-//
-//  FileElementBuilder.swift
-//  tuistui
-//
-//  Created by Jihoonahn on 10/27/23.
-//
+import ProjectDescription
 
-import Foundation
+@resultBuilder
+public struct FileElementBuilder {
+    public static func buildBlock(_ fileElements: FileElement...) -> [FileElement] {
+        fileElements
+    }
+    public static func buildBlock(_ fileElements: [FileElement]) -> [FileElement] {
+        fileElements
+    }
+}

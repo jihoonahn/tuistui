@@ -38,4 +38,28 @@ public extension Project {
         projectModifier.schemes = scheme()
         return self
     }
+    /// project type setting
+    @inlinable
+    func settings(_ setting: Settings? = nil) -> Self {
+        projectModifier.settings = setting
+        return self
+    }
+    /// fileHeaderTemplate Set up
+    @inlinable
+    func fileHeaderTemplate(_ fileHeader: FileHeaderTemplate) -> Self {
+        projectModifier.fileHeaderTemplate = fileHeader
+        return self
+    }
+    /// additionalFiles Set up
+    @inlinable
+    func additionalFile(@FileElementBuilder additionalFile: () -> [FileElement]) -> Self {
+        projectModifier.additionalFiles = additionalFile()
+        return self
+    }
+    /// resourceSynthesizers Set up
+    @inlinable
+    func resourceSynthesizer(_ resourceSynthesizer: [ResourceSynthesizer]) -> Self {
+        projectModifier.resourceSynthesizers = resourceSynthesizer
+        return self
+    }
 }
