@@ -1,8 +1,9 @@
-//
-//  ModuleBuilder.swift
-//  tuistui
-//
-//  Created by Jihoonahn on 10/25/23.
-//
+import ProjectDescription
 
-import Foundation
+@resultBuilder
+public struct ModuleBuilder {
+    @inlinable
+    public static func buildBlock<Content: Module>(_ content: Content) -> Content {
+        content
+    }
+}
