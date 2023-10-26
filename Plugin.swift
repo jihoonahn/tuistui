@@ -1,3 +1,3 @@
 import ProjectDescription
 
-let plugin = Plugin(name: "tuistui")
+let plugin = Plugin(name: "TuistUI")
