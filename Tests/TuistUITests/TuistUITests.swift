@@ -1,5 +1,5 @@
 import XCTest
-@testable import tuist_ui
+@testable import TuistUI
 
 final class TuistUITests: XCTestCase {
     func testExample() throws {}
