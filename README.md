@@ -23,6 +23,7 @@ import TuistUI
 #### Creating Project with TuistUI
 
 ```swift
+@Project
 struct BaseFeature: Module {
     var body: some Module {
         Project {
@@ -36,16 +37,10 @@ struct BaseFeature: Module {
 }
 ```
 
-additional operations
-
-```swift
-let project = BaseFeature().makeModule()
-```
-
-
 #### Creating Workspace with TuistUI
 
 ```swift
+@Workspace
 struct TuistApp: Module {
     var body: some Module {
         Workspace {
@@ -56,12 +51,6 @@ struct TuistApp: Module {
         }
     }
 }
-```
-
-additional operations
-
-```swift
-let workspace = TuistApp().makeModule()
 ```
 
 
