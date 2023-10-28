@@ -11,9 +11,5 @@ struct BaseFeature: Module {
         Project {
             
         }
-        .package {
-            
-        }
     }
 }
- 

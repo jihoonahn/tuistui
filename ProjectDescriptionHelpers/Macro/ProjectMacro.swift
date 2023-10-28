@@ -1,8 +1,7 @@
 #if swift(>=5.9)
-
-@attached(extension)
+@attached(peer, names: arbitrary)
 public macro Project() = #externalMacro(
-    module: "ProjectMacro",
+    module: "TuistUIMacro",
     type: "ProjectMacro"
 )
 #endif

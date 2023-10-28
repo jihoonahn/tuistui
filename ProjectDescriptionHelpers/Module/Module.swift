@@ -1,12 +1,7 @@
 import ProjectDescription
 
 public protocol Module {
-    #if DEBUG
-    associatedtype _Body
-    typealias Body = _Body
-    #else
-    associatedtype Body
-    #endif
+    associatedtype Body: Module
 
     var typeName: String { get }
     func makeModule(_ name: String) -> Any
@@ -15,9 +10,9 @@ public protocol Module {
     var body: Self.Body { get }
 }
 
-extension Module where Body == Never {
-    public var body: Body {
-        fatalError("`\(Self.self)` Module has no body.")
+extension Never: Module {
+    public var body: Never {
+        fatalError()
     }
 }
 
@@ -32,4 +27,9 @@ extension Module {
     public var typeName: String {
         return String(describing: type(of: self))
     }
+}
+
+/// Calls `fatalError` with an explanation that a given `type` is a primitive `Module`
+public func neverModule(_ type: String) -> Never {
+  fatalError("\(type) is a primitive `Module`, you're not supposed to access its `body`.")
 }

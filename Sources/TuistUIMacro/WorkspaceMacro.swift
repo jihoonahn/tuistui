@@ -1,8 +1,13 @@
-//
-//  File.swift
-//  
-//
-//  Created by Jihoonahn on 10/27/23.
-//
+import SwiftSyntax
+import SwiftSyntaxBuilder
+import SwiftSyntaxMacros
 
-import Foundation
+public struct WorkspaceMacro: PeerMacro {
+    public static func expansion(
+        of node: AttributeSyntax,
+        providingPeersOf declaration: some DeclSyntaxProtocol,
+        in context: some MacroExpansionContext
+    ) throws -> [DeclSyntax] {
+        return []
+    }
+}
