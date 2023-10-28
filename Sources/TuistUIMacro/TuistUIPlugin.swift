@@ -4,7 +4,7 @@ import SwiftCompilerPlugin
 
 /// TuistUI Macro's Compiler plugin
 @main
-struct TuistUIMacroPlugin: CompilerPlugin {
+struct TuistUIPlugin: CompilerPlugin {
     var providingMacros: [Macro.Type] = [
         ProjectMacro.self,
         WorkspaceMacro.self

@@ -1,8 +1,10 @@
-//
-//  File.swift
-//  
-//
-//  Created by Jihoonahn on 10/29/23.
-//
+import SwiftSyntax
+import SwiftDiagnostics
 
-import Foundation
+struct WorkspaceDiagnostics: Diagnostics {
+    static var domain: String { "workspace" }
+
+    func structRequired(node: some SyntaxProtocol) -> Diagnostic {
+        diagnostic(for: node, message: "Workspace required a struct", id: "workspaceStructRequired")
+    }
+}
