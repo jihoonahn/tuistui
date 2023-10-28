@@ -25,7 +25,6 @@ let package = Package(
             dependencies: [
                 .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
                 .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
-                .product(name: "ProjectDescription", package: "ProjectDescription")
             ]
         ),
         .executableTarget(
@@ -37,7 +36,8 @@ let package = Package(
         .target(
             name: "TuistUI",
             dependencies: [
-                "TuistUIMacro"
+                "TuistUIMacro",
+                .product(name: "ProjectDescription", package: "ProjectDescription")
             ],
             path: "ProjectDescriptionHelpers"
         ),
