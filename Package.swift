@@ -7,7 +7,7 @@ let package = Package(
     products: [
         .executable(
             name: "tuist-ui",
-            targets: ["tuist-ui-cli"]
+            targets: ["TuistUICLI"]
         ),
         .library(
             name: "TuistUI",
@@ -19,7 +19,7 @@ let package = Package(
     ],
     targets: [
         .executableTarget(
-            name: "tuist-ui-cli",
+            name: "TuistUICLI",
             dependencies: [
                 "TuistUI"
             ]
