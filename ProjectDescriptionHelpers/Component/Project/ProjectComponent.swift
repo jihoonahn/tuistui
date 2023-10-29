@@ -11,6 +11,10 @@ public struct Project<Content>: Module where Content: TargetConvertable {
         projectModifier.name = name
         return projectModifier.build()
     }
+    
+    public var body: Never {
+        neverModule("Project")
+    }
 }
 
 public extension Project {
@@ -40,7 +44,7 @@ public extension Project {
     }
     /// project type setting
     @inlinable
-    func settings(_ setting: Settings? = nil) -> Self {
+    func settings(_ setting: Settings?) -> Self {
         projectModifier.settings = setting
         return self
     }

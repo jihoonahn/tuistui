@@ -11,6 +11,10 @@ public struct Workspace<Content>: Module where Content: PathConvertable {
         workspaceModifier.name = name
         return workspaceModifier.build()
     }
+
+    public var body: Never {
+        neverModule("Workspace")
+    }
 }
 
 public extension Workspace {
