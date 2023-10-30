@@ -1,9 +1,10 @@
 import ProjectDescription
-
+/// A Protocol that describes how to evolve the current Module
 public protocol Module {
     associatedtype Body: Module
 
     var typeName: String { get }
+    /// Create `Project` or `Workspace`, including struct name
     func makeModule(_ name: String) -> Any
 
     @ModuleBuilder

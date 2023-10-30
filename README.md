@@ -64,7 +64,11 @@ additional operations
 let workspace = TuistApp().makeModule()
 ```
 
+## Support later
+
+- tuist 4.0
+  - tuistui macro support later
+
 
 ## License
 **tuistui** is under MIT license. See the [LICENSE](https://github.com/Jihoonahn/tuistui/blob/main/LICENSE) file for more info.
-
