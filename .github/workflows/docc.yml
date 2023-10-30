@@ -29,6 +29,8 @@ jobs:
         with:
           ref: gh-pages
           path: docs-out
+      - name: View Swift Version
+        run: swift --version
       - name: Build documentation
         run: >
           rm -rf docs-out/.git;
@@ -59,6 +61,7 @@ jobs:
                     || echo "⚠️ Documentation skipped for "$tag".";
             fi;
           done
+      
       - name: Fix permissions
         run: 'sudo chown -R $USER docs-out'
       - name: Publish documentation to GitHub Pages
