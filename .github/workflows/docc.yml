@@ -14,8 +14,12 @@ concurrency:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-13
     steps:
+      - name: Set Xcode version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.0'
       - name: Checkout Package
         uses: actions/checkout@v3
         with:
