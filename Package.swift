@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "TuistUI",
+    name: "tuistui",
     platforms: [.macOS(.v11)],
     products: [
         .executable(
