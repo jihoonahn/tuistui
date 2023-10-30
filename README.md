@@ -12,6 +12,11 @@ TuistUI is Style Plugin for cooler use of Tuist.
 
 In order to tell Tuist you'd like to use TuistUI plugin in your project follow the instructions that are described in [Tuist documentation.](https://docs.tuist.io/plugins/using-plugins)
 
+
+## Documentation
+The documentation for releases and `main` are available here:
+- [`main`](https://jihoonahn.github.io/tuistui/main/documentation/tuistui/)
+
 ## Using
 
 Then import the `TuistUI` from thr location you want to use.
