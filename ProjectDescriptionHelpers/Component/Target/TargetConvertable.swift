@@ -1,5 +1,6 @@
 import ProjectDescription
 
+/// Convert Target  Type
 public protocol TargetConvertable {
     func build() -> Target
 }

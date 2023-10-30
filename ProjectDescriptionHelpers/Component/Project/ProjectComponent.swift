@@ -1,6 +1,30 @@
 import ProjectDescription
 
+/// A project representation.
+///
+/// A project manifest needs to be defined in a `Project.swift` manifest file.
+/// Manifests need to import the framework ProjectDescription and TuistUI which contains all
+/// 
+/// The snippet below shows an example project manifest:
+///
+/// ```swift
+/// struct ExameplProject: Module {
+///    var body: some Module {
+///        Project {
+///            // Target Type
+///        }
+///    }
+/// }
+/// ```
+///
+/// additional project operations
+///
+/// ```swift
+/// let project = ExameplProject().makeModule()
+/// ```
+
 public struct Project<Content>: Module where Content: TargetConvertable {
+    /// Allows project modifier to be made to a given Project Type.
     public let projectModifier = ProjectModifier()
 
     public init(@TargetBuilder content: () -> [Content]) {
@@ -18,49 +42,49 @@ public struct Project<Content>: Module where Content: TargetConvertable {
 }
 
 public extension Project {
-    /// organizationName
+    /// project organization name Setting
     @inlinable
     func organizationName(_ name: String) -> Self {
         projectModifier.organizationName = name
         return self
     }
-    /// Package Set up
+    /// project package setting
     @inlinable
     func package(@PackageBuilder packages: () -> [Package]) -> Self {
         projectModifier.packages = packages()
         return self
     }
-    /// option Set up
+    /// project option setting
     @inlinable
     func option(options: ProjectDescription.Project.Options) -> Self {
         projectModifier.options = options
         return self
     }
-    /// scheme Set up
+    /// project scheme setting
     @inlinable
     func scheme(@SchemeBuilder scheme: () -> [ProjectDescription.Scheme]) -> Self {
         projectModifier.schemes = scheme()
         return self
     }
-    /// project type setting
+    /// project setting related settings
     @inlinable
     func settings(_ setting: Settings?) -> Self {
         projectModifier.settings = setting
         return self
     }
-    /// fileHeaderTemplate Set up
+    /// project fileHeaderTemplate setting
     @inlinable
     func fileHeaderTemplate(_ fileHeader: FileHeaderTemplate) -> Self {
         projectModifier.fileHeaderTemplate = fileHeader
         return self
     }
-    /// additionalFiles Set up
+    /// project additionalFiles setting
     @inlinable
     func additionalFile(@FileElementBuilder additionalFile: () -> [FileElement]) -> Self {
         projectModifier.additionalFiles = additionalFile()
         return self
     }
-    /// resourceSynthesizers Set up
+    /// project resourceSynthesizers setting
     @inlinable
     func resourceSynthesizer(_ resourceSynthesizer: [ResourceSynthesizer]) -> Self {
         projectModifier.resourceSynthesizers = resourceSynthesizer

@@ -1,6 +1,33 @@
 import ProjectDescription
 
+/// A workspace representation.
+///
+/// By default, `tuist generate` generates an Xcode workspace that has the same name as the current project.
+/// It includes the project and all its dependencies.
+///
+/// Tuist allows customizing this behaviour by defining a workspace manifest within a `Workspace.swift` file.
+/// Workspace manifests allow specifying a list of projects to generate and include in an Xcode workspace.
+///
+/// The snippet below shows an example workspace manifest:
+///
+/// ```swift
+/// struct TuistApp: Module {
+///    var body: some Module {
+///        Workspace {
+///            // The Path to manifest Projects
+///        }
+///    }
+/// }
+/// ```
+/// additional workspace operations
+///
+/// ```swift
+/// let workspace = TuistApp().makeModule()
+/// ```
+
+
 public struct Workspace<Content>: Module where Content: PathConvertable {
+    /// Allows workspace modifier to be made to a given Workspace Type.
     public let workspaceModifier = WorkspaceModifier()
     
     public init(@PathBuilder content: () -> [Content]) {
@@ -18,24 +45,25 @@ public struct Workspace<Content>: Module where Content: PathConvertable {
 }
 
 public extension Workspace {
+    /// workspace scheme setting
     @inlinable
     func scheme(@SchemeBuilder scheme: () -> [ProjectDescription.Scheme]) -> Self {
         workspaceModifier.schemes = scheme()
         return self
     }
-    /// fileHeaderTemplate Set up
+    /// workspace file Header Template setting
     @inlinable
     func fileHeaderTemplate(_ fileHeader: FileHeaderTemplate) -> Self {
         workspaceModifier.fileHeaderTemplate = fileHeader
         return self
     }
-    /// additionalFiles Set up
+    /// workspace additional Files setting
     @inlinable
     func additionalFile(@FileElementBuilder additionalFile: () -> [FileElement]) -> Self {
         workspaceModifier.additionalFiles = additionalFile()
         return self
     }
-    /// generationOption Set up
+    /// workspace generationOption setting
     @inlinable
     func generationOption(_ option: ProjectDescription.Workspace.GenerationOptions) -> Self {
         workspaceModifier.generationOptions = option
