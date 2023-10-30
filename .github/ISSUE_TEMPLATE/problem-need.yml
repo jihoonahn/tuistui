@@ -1,12 +1,12 @@
-name: Bug Report
-description: Found a bug in TuistUI? Create a report!
+name: Problem or need
+description: Please report any problems or needs that you have encountered which TuistUI currently does not address or inadequately solves
 title: "Insert title here"
-labels: ["type:bug"]
+labels: ["type:need/problem"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        Thanks for taking the time to help improve TuistUI!
   - type: textarea
     id: what-happened
     attributes:
@@ -16,13 +16,13 @@ body:
     validations:
       required: true
   - type: textarea
-    id: error-log
+    id: potential-solution
     attributes:
-      label: Error log
-      description: The full error message
-      placeholder: The full error message
+      label: Potential solution
+      description: If you have any ideas for solving the problem, please feel free to share them here.
+      placeholder: Please provide a detailed explanation of how you would approach solving the problem
     validations:
-      required: true
+      required: false
   - type: input
     id: macos-version
     attributes:
