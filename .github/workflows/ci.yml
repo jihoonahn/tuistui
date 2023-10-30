@@ -19,20 +19,22 @@ jobs:
         name: macos 13 (Xcode 15.0.0)
         runs-on: macos-13
         strategy:
-            matrix:
-            config: ['debug', 'release']
+          matrix:
+            config:
+              - debug
+              - release
         steps:
             - name: Set Xcode version
-            uses: maxim-lobanov/setup-xcode@v1
-            with:
+              uses: maxim-lobanov/setup-xcode@v1
+              with:
                 xcode-version: '15.0'
             - name: Checkout Package
-            uses: actions/checkout@v3
-            with:
+              uses: actions/checkout@v3
+              with:
                 fetch-depth: 0
             - name: View Swift Version
-            run: swift --version
+              run: swift --version
             - name: Build and Test
-            run: |
+              run: |
                 swift build
                 swift test
