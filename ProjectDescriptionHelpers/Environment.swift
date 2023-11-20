@@ -4,9 +4,9 @@ import ProjectDescription
 ///
 /// Used for Environment Management.
 /// ```swift
-///  @Environment var env = AppEnvironment()
+///  @ModuleEnvironment var env = AppEnvironment()
 /// ```
-@propertyWrapper public struct Environment<ObjectType> where ObjectType: EnvironmentObject {
+@propertyWrapper public struct ModuleEnvironment<ObjectType> where ObjectType: EnvironmentObject {
     private var env: ObjectType
 
     public init(wrappedValue: ObjectType) {
@@ -15,7 +15,7 @@ import ProjectDescription
 
     public var wrappedValue: ObjectType { env }
 
-    public var projectedValue: Environment<ObjectType> {
+    public var projectedValue: ModuleEnvironment<ObjectType> {
         get { return self }
     }
 }
