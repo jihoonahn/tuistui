@@ -51,6 +51,12 @@ public extension Workspace {
         workspaceModifier.schemes = scheme()
         return self
     }
+    /// workspace scheme setting
+    @inlinable
+    func scheme(_ scheme: [ProjectDescription.Scheme]) -> Self {
+        workspaceModifier.schemes = scheme
+        return self
+    }
     /// workspace file Header Template setting
     @inlinable
     func fileHeaderTemplate(_ fileHeader: FileHeaderTemplate) -> Self {
@@ -61,6 +67,12 @@ public extension Workspace {
     @inlinable
     func additionalFile(@FileElementBuilder additionalFile: () -> [FileElement]) -> Self {
         workspaceModifier.additionalFiles = additionalFile()
+        return self
+    }
+    /// workspace additional Files setting
+    @inlinable
+    func additionalFile(_ additionalFile: [FileElement]) -> Self {
+        workspaceModifier.additionalFiles = additionalFile
         return self
     }
     /// workspace generationOption setting

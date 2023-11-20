@@ -4,7 +4,7 @@ import ProjectDescription
 ///
 /// A project manifest needs to be defined in a `Project.swift` manifest file.
 /// Manifests need to import the framework ProjectDescription and TuistUI which contains all
-/// 
+///
 /// The snippet below shows an example project manifest:
 ///
 /// ```swift
@@ -54,6 +54,12 @@ public extension Project {
         projectModifier.packages = packages()
         return self
     }
+    /// project package setting
+    @inlinable
+    func package(_ packages: [Package]) -> Self {
+        projectModifier.packages = packages
+        return self
+    }
     /// project option setting
     @inlinable
     func option(options: ProjectDescription.Project.Options) -> Self {
@@ -64,6 +70,12 @@ public extension Project {
     @inlinable
     func scheme(@SchemeBuilder scheme: () -> [ProjectDescription.Scheme]) -> Self {
         projectModifier.schemes = scheme()
+        return self
+    }
+    /// project scheme setting
+    @inlinable
+    func scheme(_ scheme: [ProjectDescription.Scheme]) -> Self {
+        projectModifier.schemes = scheme
         return self
     }
     /// project setting related settings
@@ -82,6 +94,12 @@ public extension Project {
     @inlinable
     func additionalFile(@FileElementBuilder additionalFile: () -> [FileElement]) -> Self {
         projectModifier.additionalFiles = additionalFile()
+        return self
+    }
+    /// project additionalFiles setting
+    @inlinable
+    func additionalFile(_ additionalFile: [FileElement]) -> Self {
+        projectModifier.additionalFiles = additionalFile
         return self
     }
     /// project resourceSynthesizers setting
