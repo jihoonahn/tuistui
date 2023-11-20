@@ -95,7 +95,7 @@ How to use within a module.
 
 ```swift
 struct BaseProject: Module {
-    @Environment let env = AppEnvironment()
+    @TuistUI.Environment var env = AppEnvironment()
 
     var body: Module {
         Project {
