@@ -15,12 +15,7 @@ let package = Package(
         .package(url: "https://github.com/tuist/projectdescription", from: "3.28.0"),
     ],
     targets: [
-        .executableTarget(
-            name: "TuistUICLI",
-            dependencies: [
-                "TuistUI"
-            ]
-        ),
+        .executableTarget(name: "TuistUICLI"),
         .target(
             name: "TuistUI",
             dependencies: [
