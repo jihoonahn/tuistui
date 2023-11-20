@@ -8,10 +8,6 @@ let package = Package(
         .executable(
             name: "tuist-ui",
             targets: ["TuistUICLI"]
-        ),
-        .library(
-            name: "TuistUI",
-            targets: ["TuistUI"]
         )
     ],
     dependencies: [
