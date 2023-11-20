@@ -80,6 +80,32 @@ additional operations
 let workspace = TuistApp().makeModule()
 ```
 
+### Environment management
+EnvironmentObject can manage redundant parts of a project or workspace.
+
+```swift
+final class AppEnvironment: EnvironmentObject {
+    let organizationName: String = ""
+    let deploymentTarget: DeploymentTarget = .iOS(targetVersion: "15.0", devices: [.iphone, .ipad])
+    let platform: Platform = .iOS
+}
+```
+
+How to use within a module.
+
+```swift
+struct BaseProject: Module {
+    @Environment let env = AppEnvironment()
+
+    var body: Module {
+        Project {
+            // Target
+        }
+        .organizationName(env.organizationName)
+    }
+}
+```
+
 ## Support later
 
 - tuist 4.0
