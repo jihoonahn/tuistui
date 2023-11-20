@@ -19,3 +19,6 @@ This Tuist Plugin provides a new way of creating a Project or Workspace using de
 ### Module component
 - ``Project``
 - ``Workspace``
+
+### Environment management
+- ``Environment``
