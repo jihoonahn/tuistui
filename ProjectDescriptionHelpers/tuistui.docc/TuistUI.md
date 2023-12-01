@@ -4,7 +4,7 @@ TuistUI is Style Plugin for cooler use of Tuist.
 
 ## Additional Resources
 
-- [GitHub Repo](https://github.com/Jihoonahn/tuistui)
+- [GitHub Repo](https://github.com/jihoonahn/tuistui)
 
 ## Overview
 
