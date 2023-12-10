@@ -115,8 +115,8 @@ $ tuist scaffold $(templateName) --path $(path) --name $(name)
 <details>
   <summary> Template Name </summary>
 
-- Project
-- Workspace
+- project
+- workspace
 </details>
 
 ## Support later
