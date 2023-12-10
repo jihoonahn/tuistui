@@ -1,0 +1,13 @@
+import ProjectDescription
+import TuistUI
+
+let project = {{ name }}().makeModule()
+
+struct {{ name }}: Module {
+
+    var body: some Module {
+        Workspace {
+
+        }
+    }
+}
