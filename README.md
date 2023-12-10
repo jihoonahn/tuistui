@@ -120,9 +120,7 @@ $ tuist scaffold $(templateName) --path $(path) --name $(name)
 </details>
 
 ## Support later
-
-- tuist 4.0
-  - tuistui macro support later
+- tuistui macro support later
 
 
 ## License
