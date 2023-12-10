@@ -106,6 +106,19 @@ struct BaseProject: Module {
 }
 ```
 
+## Templates
+
+```bash
+$ tuist scaffold $(templateName) --path $(path) --name $(name)
+```
+
+<details>
+  <summary> Template Name </summary>
+
+- Project
+- Workspace
+</details>
+
 ## Support later
 
 - tuist 4.0
