@@ -10,7 +10,7 @@ final class ModuleTests: XCTestCase {
             }
         }
         let testProject = TestProject()
-        let projectType = type(of: testProject.makeModule())
+        let projectType = type(of: testProject.module())
         
         XCTAssertTrue(projectType == ProjectDescription.Project.self, "The return type is not ProjectDescription.Project")
     }
@@ -21,7 +21,7 @@ final class ModuleTests: XCTestCase {
             }
         }
         let testWorkspace = TestWorkspace()
-        let workspaceType = type(of: testWorkspace.makeModule())
+        let workspaceType = type(of: testWorkspace.module())
         
         XCTAssertTrue(workspaceType == ProjectDescription.Workspace.self, "The return type is not ProjectDescription.Workspace")
     }
