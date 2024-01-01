@@ -55,7 +55,7 @@ struct BaseFeature: Module {
 additional operations
 
 ```swift
-let project = BaseFeature().makeModule()
+let project = BaseFeature().module()
 ```
 
 
@@ -77,7 +77,7 @@ struct TuistApp: Module {
 additional operations
 
 ```swift
-let workspace = TuistApp().makeModule()
+let workspace = TuistApp().module()
 ```
 
 ### Environment management
