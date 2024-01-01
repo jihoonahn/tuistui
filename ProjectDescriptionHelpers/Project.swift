@@ -20,7 +20,7 @@ import ProjectDescription
 /// additional project operations
 ///
 /// ```swift
-/// let project = ExameplProject().makeModule()
+/// let project = ExameplProject().module()
 /// ```
 
 public struct Project<Content>: Module where Content: TargetConvertable {
@@ -31,7 +31,7 @@ public struct Project<Content>: Module where Content: TargetConvertable {
         projectModifier.targets = content().map { $0.build() }
     }
 
-    public func makeModule(_ name: String) -> Any {
+    public func module(_ name: String) -> Any {
         projectModifier.name = name
         return projectModifier.build()
     }

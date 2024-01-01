@@ -10,14 +10,16 @@ import ProjectDescription
 ///     }
 /// }
 /// ```
+///
 public protocol Module {
     /// A type representing the body of this Module.
     associatedtype Body: Module
 
     /// Responsible for retrieving the name of the module.
     var typeName: String { get }
+
     /// Create `Project` or `Workspace`, including struct name
-    func makeModule(_ name: String) -> Any
+    func module(_ name: String) -> Any
 
     /// The content and behavior of a module.
     @ModuleBuilder
@@ -31,9 +33,10 @@ extension Never: Module {
 }
 
 extension Module where Body: Module {
+    @discardableResult
     @inlinable
-    public func makeModule(_ name: String = "") -> Any {
-        return self.body.makeModule(typeName)
+    public func module(_ name: String = "") -> Any {
+        return self.body.module(typeName)
     }
 }
 

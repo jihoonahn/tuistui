@@ -22,7 +22,7 @@ import ProjectDescription
 /// additional workspace operations
 ///
 /// ```swift
-/// let workspace = TuistApp().makeModule()
+/// let workspace = TuistApp().module()
 /// ```
 
 
@@ -34,7 +34,7 @@ public struct Workspace<Content>: Module where Content: PathConvertable {
         workspaceModifier.projects = content().map { $0.build() }
     }
     
-    public func makeModule(_ name: String) -> Any {
+    public func module(_ name: String) -> Any {
         workspaceModifier.name = name
         return workspaceModifier.build()
     }
