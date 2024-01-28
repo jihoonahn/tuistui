@@ -49,6 +49,6 @@ extension Module {
 extension Module {
     /// Calls `fatalError` with an explanation that a given `type` is a primitive `Module`
     public func neverModule(_ type: String) -> Never {
-      fatalError("\(type) is a primitive `Module`, you're not supposed to access its `body`.")
+        fatalError("\(type) is a primitive `Module`, you're not supposed to access its `body`.")
     }
 }

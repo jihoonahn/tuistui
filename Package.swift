@@ -5,6 +5,10 @@ let package = Package(
     name: "tuistui",
     platforms: [.macOS(.v11)],
     products: [
+        .library(
+            name: "TuistUI",
+            targets: ["TuistUI"]
+        ),
         .executable(
             name: "tuist-ui",
             targets: ["TuistUICLI"]
