@@ -90,7 +90,7 @@ public struct Target: TargetConvertable {
 
     /// The target's tags associated with on demand resources
     public let onDemandResourcesTags: OnDemandResourcesTags?
-    
+
     public init(
         name: String, 
         destinations: Destinations,
@@ -140,7 +140,7 @@ public struct Target: TargetConvertable {
         self.mergeable = mergeable
         self.onDemandResourcesTags = onDemandResourcesTags
     }
-    
+
     public func build() -> ProjectDescription.Target {
         ProjectDescription.Target.target(
             name: name,
