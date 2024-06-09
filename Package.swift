@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "tuistui",
-    platforms: [.macOS(.v11)],
+    platforms: [.macOS(.v12)],
     products: [
         .executable(
             name: "tuist-ui",
