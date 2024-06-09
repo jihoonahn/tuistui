@@ -1,4 +1,4 @@
-// swift-tools-version: 5.9
+// swift-tools-version: 5.10
 import PackageDescription
 
 let package = Package(
@@ -12,7 +12,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.3.0"),
-        .package(url: "https://github.com/tuist/tuist", from: "4.16.1"),
+        .package(url: "https://github.com/tuist/tuist", from: "4.16.0"),
         .package(url: "https://github.com/apple/swift-log", .upToNextMajor(from: "1.5.4")),
     ],
     targets: [
