@@ -2,11 +2,11 @@ import ProjectDescription
 
 /// Convert Target  Type
 public protocol TargetConvertable {
-    func build() -> Target
+    func build() -> ProjectDescription.Target
 }
 
-extension Target: TargetConvertable {
-    public func build() -> Target {
+extension ProjectDescription.Target: TargetConvertable {
+    public func build() -> ProjectDescription.Target {
         self
     }
 }
