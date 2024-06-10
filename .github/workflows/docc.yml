@@ -15,12 +15,11 @@ concurrency:
 
 jobs:
   build:
-    runs-on: macos-13
+    runs-on: macos-14
     steps:
-      - name: Set Xcode version
-        uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: '15.0'
+      - uses: swift-actions/setup-swift@v2
+      - name: Get swift version
+        run: swift --version
       - name: Checkout Package
         uses: actions/checkout@v3
         with:
