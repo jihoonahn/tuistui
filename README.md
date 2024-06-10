@@ -88,8 +88,8 @@ EnvironmentObject can manage redundant parts of a project or workspace.
 ```swift
 final class AppEnvironment: EnvironmentObject {
     let organizationName: String = ""
-    let deploymentTarget: DeploymentTarget = .iOS(targetVersion: "15.0", devices: [.iphone, .ipad])
-    let platform: Platform = .iOS
+    let destinations: Destinations = .iOS
+    let deploymentTargets: DeploymentTargets = .iOS("15.0")
 }
 ```
 
