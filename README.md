@@ -13,6 +13,7 @@ TuistUI is Style Plugin for cooler use of Tuist.
 In order to tell Tuist you'd like to use TuistUI plugin in your project follow the instructions that are described in [Tuist documentation.](https://docs.tuist.io/plugins/using-plugins)
 
 Add the plugin to `Config.swift`.
+
 ```swift
 import ProjectDescription
 
@@ -23,9 +24,10 @@ let config = Config(
 )
 ```
 
-
 ## Documentation
+
 The documentation for releases and `main` are available here:
+
 - [`main`](https://jihoonahn.github.io/tuistui/main/documentation/tuistui/)
 
 ## Using
@@ -48,7 +50,7 @@ struct BaseFeature: Module {
         .package {
             /// Package Code
         }
-    }    
+    }
 }
 ```
 
@@ -57,7 +59,6 @@ additional operations
 ```swift
 let project = BaseFeature().module()
 ```
-
 
 #### Creating Workspace with TuistUI
 
@@ -81,6 +82,7 @@ let workspace = TuistApp().module()
 ```
 
 ### Environment management
+
 EnvironmentObject can manage redundant parts of a project or workspace.
 
 ```swift
@@ -106,6 +108,56 @@ struct BaseProject: Module {
 }
 ```
 
+### Configuration management
+
+Manage configurations effectively using the `Configuration` Protocol.
+
+```swift
+struct AppConfiguration: Configuration {
+
+    enum ConfigurationTarget: String, ConfigurationType {
+        case baseProject
+
+        var path: Path {
+            switch self {
+            case .baseProject:
+                return .relativeToRoot("/baseProject/debug.xcconfig")
+            }
+        }
+    }
+
+    var body: some ConfigurationOf<Self> {
+        Configure ({
+            switch $0 {
+            case .baseProject:
+                return [
+                    // Write Configuration Method
+                ]
+            }
+        })
+    }
+}
+```
+
+How to use within a module.
+
+```swift
+struct BaseProject: Module {
+    let config = AppConfiguration()
+
+    var body: Module {
+        Project {
+            // Target
+        }
+        .settings(
+            .settings(
+                configurations: config.configure(into: .baseProject)
+            )
+        )
+    }
+}
+```
+
 ## Templates
 
 ```bash
@@ -119,9 +171,6 @@ $ tuist scaffold $(templateName) --path $(path) --name $(name)
 - workspace
 </details>
 
-## Support later
-- tuistui macro support later
-
-
 ## License
+
 **tuistui** is under MIT license. See the [LICENSE](https://github.com/Jihoonahn/tuistui/blob/main/LICENSE) file for more info.
