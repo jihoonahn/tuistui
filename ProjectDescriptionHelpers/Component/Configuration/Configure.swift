@@ -1,5 +1,6 @@
 import ProjectDescription
 
+/// A type-erased configuration that invokes the given configure function.
 public struct Configure<ConfigurationTarget: ConfigurationType>: Configuration {
 
     @usableFromInline

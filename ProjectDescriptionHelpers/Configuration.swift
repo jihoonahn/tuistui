@@ -1,5 +1,6 @@
 import ProjectDescription
 
+/// A protocol that serves to manage the configuration used in the project at once.
 public protocol Configuration<ConfigurationTarget> {
     /// A type that holds the current target of the configuration info.
     associatedtype ConfigurationTarget: ConfigurationType
@@ -30,4 +31,5 @@ extension Configuration where Body: Configuration, Body.ConfigurationTarget == C
     }
 }
 
+/// A convenience for constraining a Configuration conformance.
 public typealias ConfigurationOf<C: Configuration> = Configuration<C.ConfigurationTarget>
