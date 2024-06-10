@@ -22,3 +22,6 @@ This Tuist Plugin provides a new way of creating a Project or Workspace using de
 
 ### Environment management
 - ``ModuleEnvironment``
+
+### Configuration management
+- ``Configuration``
