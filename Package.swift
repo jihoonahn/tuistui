@@ -13,7 +13,6 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.3.0"),
         .package(url: "https://github.com/tuist/tuist", from: "4.15.0"),
-        .package(url: "https://github.com/apple/swift-log", .upToNextMajor(from: "1.5.4")),
     ],
     targets: [
         .executableTarget(name: "TuistUICLI"),
