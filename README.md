@@ -113,20 +113,20 @@ struct BaseProject: Module {
 Manage configurations effectively using the `Configuration` Protocol.
 
 ```swift
-struct AppConfiguration: Configuration {
+struct AppConfiguration: XCConfig {
 
-    enum ConfigurationTarget: String, ConfigurationType {
+    enum XCConfigTarget: String, XCConfigTargetType {
         case baseProject
 
         var path: Path {
             switch self {
             case .baseProject:
-                return .relativeToRoot("/baseProject/debug.xcconfig")
+                return .relativeToRoot("XCConfig/baseProject")
             }
         }
     }
 
-    var body: some ConfigurationOf<Self> {
+    var body: some XCConfigOf<Self> {
         Configure ({
             switch $0 {
             case .baseProject:
@@ -136,6 +136,32 @@ struct AppConfiguration: Configuration {
             }
         })
     }
+}
+```
+
+Set the Deploy Target part of XCConfig.
+
+```swift
+enum XCConfigDeployTarget: String, XCConfigDeployTargetType {
+    case dev = "DEV"
+    case stage = "STAGE"
+    case prod = "PROD"
+} 
+```
+
+And use .debug(into:deploy:) method, .release(into:deploy:) method extended to ConfigurationName and make it easier to use
+
+```
+var body: some XCConfigOf<Self> {
+    Configure ({
+        switch $0 {
+        case .A:
+            return [
+                .debug(into: $0, deploy: XCConfigDeployTarget.dev)
+                .release(into: $0, deploy: XCConfigDeployTarget.prod)
+            ]
+        }
+    })
 }
 ```
 

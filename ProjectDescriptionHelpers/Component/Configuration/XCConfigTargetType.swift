@@ -1,7 +1,7 @@
 import ProjectDescription
 
 /// Protocols for organizing configurations in one place
-public protocol ConfigurationType: Hashable, CaseIterable, RawRepresentable where RawValue == String {
+public protocol XCConfigTargetType: Hashable, CaseIterable, RawRepresentable where RawValue == String {
     /// Specify the configuration path.
     var path: ProjectDescription.Path { get }
 
@@ -9,7 +9,7 @@ public protocol ConfigurationType: Hashable, CaseIterable, RawRepresentable wher
     var configurationName: ConfigurationName { get }
 }
 
-extension ConfigurationType {
+extension XCConfigTargetType {
     public var configurationName: ConfigurationName {
         ConfigurationName(stringLiteral: rawValue)
     }
