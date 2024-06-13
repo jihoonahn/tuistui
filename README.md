@@ -110,7 +110,7 @@ struct BaseProject: Module {
 
 ### Configuration management
 
-Manage configurations effectively using the `Configuration` Protocol.
+Management configurations effectively using the `XCConfig` Protocol.
 
 ```swift
 struct AppConfiguration: XCConfig {
