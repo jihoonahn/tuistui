@@ -24,4 +24,4 @@ This Tuist Plugin provides a new way of creating a Project or Workspace using de
 - ``ModuleEnvironment``
 
 ### Configuration management
-- ``Configuration``
+- ``XCConfig``
