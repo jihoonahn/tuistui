@@ -151,7 +151,7 @@ enum XCConfigDeployTarget: String, XCConfigDeployTargetType {
 
 And use .debug(into:deploy:) method, .release(into:deploy:) method extended to ConfigurationName and make it easier to use
 
-```
+```swift
 var body: some XCConfigOf<Self> {
     Configure ({
         switch $0 {
