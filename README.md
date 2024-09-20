@@ -209,7 +209,7 @@ Using `Project Template`
 │     └── Project.swift //<- Project.swift file Generate
 ├── Tuist
 │   ├── ProjectDescriptionHelpers
-│     └── Project
+│     └── Projects
 │       └── DemoProject.swift //<- DemoProject.swift file Generate
 │   ├── Dependencies.swift
 │   ├── Config.swift
@@ -232,6 +232,8 @@ Using `Workspace Template`
 │   └── Package.swift
 └── README.md
 ```
+
+To modify the contents of a project and workspace, you only need to modify the ProjectDescription File, WorkspaceDescription File, which are clustered in the ProjectDescription Helper folder.
 
 ## License
 
