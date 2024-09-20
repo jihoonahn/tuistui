@@ -1,4 +1,5 @@
 import ProjectDescription
+import ProjectDescriptionHelpers
 import TuistUI
 
 let project = {{ name }}().module()
