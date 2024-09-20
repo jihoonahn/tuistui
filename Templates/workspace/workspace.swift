@@ -13,6 +13,10 @@ private let template = Template(
         .file(
             path: "\(pathAttribute)/\(nameAttribute)/Workspace.swift",
             templatePath: "Workspace.stencil"
+        ),
+        .file(
+            path: "Tuist/ProjectDescriptionHelpers/Workspace/\(nameAttribute).swift",
+            templatePath: "WorkspaceDescription.stencil"
         )
     ]
 )
