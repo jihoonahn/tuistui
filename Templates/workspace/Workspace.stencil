@@ -1,14 +1,5 @@
 import ProjectDescription
+import ProjectDescriptionHelper
 import TuistUI
 
-let project = {{ name }}().module()
-
-struct {{ name }}: Module {
-
-    var body: some Module {
-        Workspace {
-
-        }
-    }
-}
-
+let workspace = {{ name }}().module()
