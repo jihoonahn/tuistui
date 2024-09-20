@@ -2,12 +2,3 @@ import ProjectDescription
 import TuistUI
 
 let project = {{ name }}().module()
-
-struct {{ name }}: Module {
-
-    var body: some Module {
-        Project {
-
-        }
-    }
-}
