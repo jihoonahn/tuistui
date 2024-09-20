@@ -1,0 +1,11 @@
+import ProjectDescription
+import TuistUI
+
+public struct {{ name }}: Module {
+
+    var body: some Module {
+        Workspace {
+
+        }
+    }
+}
