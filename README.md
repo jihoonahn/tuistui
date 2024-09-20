@@ -185,6 +185,7 @@ struct BaseProject: Module {
 ```
 
 ## Templates
+It is designed to accelerate project creation and workspace creation with templates.
 
 ```bash
 $ tuist scaffold $(templateName) --path $(path) --name $(name)
@@ -196,6 +197,41 @@ $ tuist scaffold $(templateName) --path $(path) --name $(name)
 - project
 - workspace
 </details>
+
+## Project Structure
+Project File and Workplace File are gathered in one place to facilitate quick modifications.
+
+Using `Project Template`
+```
+.
+├── Projects
+│   └── App
+│     └── Project.swift //<- Project.swift file Generate
+├── Tuist
+│   ├── ProjectDescriptionHelpers
+│     └── Project
+│       └── DemoProject.swift //<- DemoProject.swift file Generate
+│   ├── Dependencies.swift
+│   ├── Config.swift
+│   └── Package.swift
+└── README.md
+```
+
+Using `Workspace Template`
+```
+.
+├── Projects
+│   └── App
+│     └── Workspace.swift //<- Workspace.swift file Generate
+├── Tuist
+│   ├── ProjectDescriptionHelpers
+│     └── Workspace
+│       └── DemoApp.swift //<- DemoApp.swift file Generate
+│   ├── Dependencies.swift
+│   ├── Config.swift
+│   └── Package.swift
+└── README.md
+```
 
 ## License
 
