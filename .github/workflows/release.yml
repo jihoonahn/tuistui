@@ -1,0 +1,24 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  macos:
+    name: Release Tuist Plugin Zip
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Tuist
+        run: brew install --formula tuist@4.27.0
+      - name: Generate Tuist Plugin
+        run: tuist plugin archive
+      - name: Upload artifact bundle
+        uses: skx/github-action-publish-binaries@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          args: 'TuistUI.tuist-plugin.zip'
