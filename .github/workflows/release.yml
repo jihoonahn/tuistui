@@ -15,6 +15,12 @@ jobs:
         run: brew install tuist
       - name: Generate Tuist Plugin
         run: tuist plugin archive
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: tuistui
+          path: TuistUI.tuist-plugin.zip
+          retention-days: 5
 
   upload:
     name: Upload release artifacts
