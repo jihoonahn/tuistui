@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up Tuist
-        run: curl -Ls https://install.tuist.io | bash
+        run: brew install --cask tuist
       - name: Generate Tuist Plugin
         run: tuist plugin archive
       - name: Upload artifacts
