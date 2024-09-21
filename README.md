@@ -198,7 +198,7 @@ $ tuist scaffold $(templateName) --path $(path) --name $(name)
 - workspace
 </details>
 
-## Project Structure
+#### Project Structure With TuistUI
 Project File and Workplace File are gathered in one place to facilitate quick modifications.
 
 Using `Project Template`
