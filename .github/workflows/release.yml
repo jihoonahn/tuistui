@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Tuist
-        run: brew install --formula tuist@4.6.0
+        run: brew install tuist
       - name: Generate Tuist Plugin
         run: tuist plugin archive
       - name: Upload artifact bundle
