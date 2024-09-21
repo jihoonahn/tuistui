@@ -34,9 +34,10 @@ jobs:
           path: downloaded_artifacts
       - name: Display structure of downloaded files
         run: ls -R downloaded_artifacts
-      - name: Upload plugin artifacts
-        uses: actions/upload-artifact@v4
+      - name: Upload Release Assets
+        uses: actions/upload-release-asset@v1
         with:
-          name: tuistui
-          path: downloaded_artifacts/tuistui/TuistUI.tuist-plugin.zip
-          retention-days: 5
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: downloaded_artifacts/tuistui/TuistUI.tuist-plugin.zip
+          asset_name: TuistUI.tuist-plugin.zip
+          asset_content_type: application/zip
