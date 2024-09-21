@@ -34,13 +34,9 @@ jobs:
           path: downloaded_artifacts
       - name: Display structure of downloaded files
         run: ls -R downloaded_artifacts
-      - name: Check File Path
-        run: |
-          ls
-          cd downloaded_artifacts && ls
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: tuistui
-          path: ../TuistUI.tuist-plugin.zip
+          path: downloaded_artifacts/tuistui/TuistUI.tuist-plugin.zip
           retention-days: 5
